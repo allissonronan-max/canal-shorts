@@ -44,7 +44,7 @@ def http_get(url, destino=None, tentativas=6):
             # A Wikimedia limita o ritmo de requisições; espera e tenta de novo.
             if e.code != 429 or n == tentativas - 1:
                 raise
-            time.sleep(int(e.headers.get("Retry-After") or 0) or 5 * 2 ** n)
+            time.sleep(min(int(e.headers.get("Retry-After") or 0) or 5 * 2 ** n, 90))
     if destino:
         Path(destino).write_bytes(dados)
     return dados
@@ -81,7 +81,7 @@ def buscar_imagem(consultas, usadas, destino):
         params = {
             "action": "query", "format": "json", "generator": "search",
             "gsrsearch": f"{consulta} filetype:bitmap", "gsrnamespace": 6, "gsrlimit": 20,
-            "prop": "imageinfo", "iiprop": "url|extmetadata|mime|size", "iiurlwidth": 1600,
+            "prop": "imageinfo", "iiprop": "url|extmetadata|mime|size", "iiurlwidth": 1280,  # a Wikimedia só serve tamanhos padrão (1280, 1920…)
         }
         url = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params)
         time.sleep(1)  # respeita o limite de ritmo da Wikimedia
@@ -91,7 +91,7 @@ def buscar_imagem(consultas, usadas, destino):
             meta = info.get("extmetadata", {})
             licenca = meta.get("LicenseShortName", {}).get("value", "")
             if (p["title"] in usadas or info["mime"] not in ("image/jpeg", "image/png")
-                    or info["width"] < 800 or not LICENCAS_OK.match(licenca)):
+                    or info["width"] < 1280 or not LICENCAS_OK.match(licenca)):
                 continue
             http_get(info["thumburl"], destino)
             usadas.add(p["title"])
