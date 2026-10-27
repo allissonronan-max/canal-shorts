@@ -166,7 +166,15 @@ def main():
     for i, cena in enumerate(rot["scenes"]):
         print(f"cena {i + 1}/{len(rot['scenes'])}: {cena['text'][:50]}…", flush=True)
         audio, img, clipe = tmp / f"{i:02d}.mp3", tmp / f"{i:02d}.jpg", tmp / f"{i:02d}.mp4"
-        pals = asyncio.run(narrar(cena["text"], voz, velocidade, audio))
+        for n in range(5):
+            try:
+                pals = asyncio.run(narrar(cena["text"], voz, velocidade, audio))
+                break
+            except edge_tts.exceptions.NoAudioReceived:
+                # O serviço de voz às vezes falha por instantes; espera e tenta de novo.
+                if n == 4:
+                    raise
+                time.sleep(10 * (n + 1))
         dur = duracao(audio) + 0.12
         info = buscar_imagem(cena["images"], usadas, img)
         creditos.append(info)
