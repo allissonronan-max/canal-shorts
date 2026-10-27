@@ -45,7 +45,10 @@ def palavras_com_tempo(wav):
     """Tempo de cada palavra falada (faster-whisper), para a legenda acender no ritmo certo."""
     from faster_whisper import WhisperModel
 
-    audio, _ = sf.read(wav, dtype="float32")
+    # O Whisper espera 16 kHz; a Kokoro gera 24 kHz. Sem converter, os tempos saem esticados 1,5x.
+    wav16 = Path(wav).with_name("narracao16k.wav")
+    run(["ffmpeg", "-y", "-i", str(wav), "-ar", "16000", "-ac", "1", str(wav16)])
+    audio, _ = sf.read(wav16, dtype="float32")
     modelo = WhisperModel("base.en", device="cpu", compute_type="int8")
     segs, _ = modelo.transcribe(audio, language="en", word_timestamps=True)
     return [{"t": w.start, "f": w.end, "w": w.word.strip()} for s in segs for w in s.words]
@@ -64,9 +67,9 @@ def legendas(palavras, cenas, inicios, total, destino):
         "Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, "
         "Alignment, MarginL, MarginR, MarginV, Encoding\n"
         # Legenda: branca com contorno escuro suave, palavra falada em laranja.
-        f"Style: Cap,{FONTE},76,&H00FFFFFF,&H00FFFFFF,&H00302018,&H64000000,0,0,0,0,100,100,0,0,1,6,0,2,70,70,330,1\n"
+        f"Style: Cap,{FONTE},76,&H00FFFFFF,&H00FFFFFF,&H00201008,&H80000000,0,0,0,0,100,100,0,0,1,9,3,2,70,70,330,1\n"
         # Etiqueta da camada: caixa escura no topo.
-        f"Style: Tag,{FONTE},54,&H00FFFFFF,&H00FFFFFF,&HE0302018,&HE0302018,0,0,0,0,100,100,2,0,3,22,0,8,70,70,240,1\n\n"
+        f"Style: Tag,{FONTE},54,&H00FFFFFF,&H00FFFFFF,&H20302018,&H20302018,0,0,0,0,100,100,2,0,3,22,0,8,70,70,240,1\n\n"
         "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n"
     )
     linhas = []
@@ -117,17 +120,19 @@ def main():
         run(cmd + ["--previa"])
         print(f"prévias em {quadros}")
         return
-    run(cmd)
+    if not (pasta / "3d.mp4").exists():
+        run(cmd)
 
     # Fundo em degradê creme -> pêssego atrás da cena; depois suaviza de 12 para 30 quadros/s e amplia.
     run(["ffmpeg", "-y", "-f", "lavfi", "-i",
          "gradients=s=720x1280:c0=0xFBEFE3:c1=0xF2BFA4:x0=360:y0=200:x1=360:y1=1280:d=1:r=1",
          "-frames:v", "1", str(pasta / "fundo.png")])
-    run(["ffmpeg", "-y", "-loop", "1", "-i", str(pasta / "fundo.png"),
-         "-framerate", str(FPS_RENDER), "-i", str(quadros / "%04d.png"),
-         "-filter_complex", f"[0:v][1:v]overlay=shortest=1,fps={FPS_RENDER},"
-         f"minterpolate=fps={FPS_FINAL}:mi_mode=mci:mc_mode=aobmc:vsbmc=1,scale=1080:1920:flags=lanczos",
-         "-c:v", "libx264", "-crf", "16", "-pix_fmt", "yuv420p", str(pasta / "3d.mp4")])
+    if not (pasta / "3d.mp4").exists():
+        run(["ffmpeg", "-y", "-loop", "1", "-i", str(pasta / "fundo.png"),
+             "-framerate", str(FPS_RENDER), "-i", str(quadros / "%04d.png"),
+             "-filter_complex", f"[0:v][1:v]overlay=shortest=1,fps={FPS_RENDER},"
+             f"minterpolate=fps={FPS_FINAL}:mi_mode=mci:mc_mode=aobmc:vsbmc=1,scale=1080:1920:flags=lanczos",
+             "-c:v", "libx264", "-crf", "16", "-pix_fmt", "yuv420p", str(pasta / "3d.mp4")])
     palavras = palavras_com_tempo(pasta / "narracao.wav")
     legendas(palavras, rot["scenes"], tempos["inicios"], tempos["total"], pasta / "legendas.ass")
     trilha(tempos["total"], pasta / "trilha.wav")
