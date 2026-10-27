@@ -42,4 +42,19 @@ Números de faturamento citados nos posts são **alegações dos autores, não v
 - Data: 25/10/2026 · ~1,6 M views · ~28 min, com legendas em inglês e espanhol
 - Post: workshop gratuito "dado por quem construiu o Claude".
 
-(resumo abaixo)
+**O que o vídeo é de fato (pela transcrição):** não é um workshop genérico sobre prompts. É a palestra de **Boris, criador do Claude Code**, com dicas práticas de uso do **Claude Code** (o assistente de programação no terminal). Parece ser a palestra do evento "Code with Claude" de 2025 republicada; o post exagera o título.
+
+**Principais dicas**
+1. **Comece fazendo perguntas, não editando.** Pergunte ao Claude sobre o projeto ("como isso funciona?", "por que isto está assim?", e ele consulta o histórico do git). Na Anthropic, isso reduziu a integração de novos engenheiros de 2–3 semanas para 2–3 dias.
+2. **Peça um plano antes de executar.** "Antes de escrever código, faça um plano e me peça aprovação." Isso evita que ele construa a coisa errada.
+3. **Dê um jeito de ele conferir o próprio trabalho** (testes, screenshots, mockups). Com 2–3 rodadas de iteração, o resultado chega perto do perfeito.
+4. **CLAUDE.md:** um arquivo na raiz do projeto que é lido no início de toda sessão, com comandos, regras, arquivos importantes e estilo. Deve ser curto. Também dá para ter versões pessoais e por pasta.
+5. **Conecte as ferramentas da equipe** (CLIs, servidores MCP) e explique ao Claude como usá-las.
+6. **Atalhos:** Shift+Tab aceita as edições automaticamente · `#` salva algo na memória · `!` roda um comando · Esc interrompe sem quebrar nada · Esc Esc volta no histórico · `--resume`/`--continue` retomam a sessão.
+7. **Modo programático** (`claude -p "prompt"`, com saída JSON) para automações e pipelines.
+8. **Usuários avançados** rodam várias sessões do Claude em paralelo.
+9. Aceita imagens: dá para arrastar um mockup e pedir para implementar.
+
+**Aplicação aqui**
+- Criar um `CLAUDE.md` neste repositório com as regras do canal (português, sem depoimentos falsos, sem promessa de renda, aprovação antes de publicar ou gastar). Isso já tinha sido sugerido ao analisar o pacote de migração.
+- Fluxo de trabalho: pedir um plano → aprovar → produzir roteiros → revisar.
