@@ -1,0 +1,55 @@
+{
+  "slug": "wood-frog",
+  "title": "This Frog Freezes Solid Every Winter 🧊 #shorts",
+  "description": "The wood frog survives winter frozen, with no heartbeat, protected by sugar acting as a natural antifreeze.",
+  "hashtags": [
+    "#shorts",
+    "#frog",
+    "#animals",
+    "#nature",
+    "#facts"
+  ],
+  "voice": "en-US-AndrewNeural",
+  "rate": "+8%",
+  "scenes": [
+    {
+      "text": "Every winter, this frog freezes solid, and its heart stops beating.",
+      "images": [
+        "incategory:Lithobates_sylvaticus"
+      ]
+    },
+    {
+      "text": "The wood frog lives as far north as Alaska, above the Arctic Circle.",
+      "images": [
+        "incategory:Lithobates_sylvaticus",
+        "Alaska forest winter"
+      ]
+    },
+    {
+      "text": "When temperatures drop, ice spreads through its body. Its breathing stops. Its heart stops.",
+      "images": [
+        "frozen forest snow",
+        "incategory:Lithobates_sylvaticus"
+      ]
+    },
+    {
+      "text": "To survive, it floods its cells with sugar, a natural antifreeze that keeps them from being destroyed.",
+      "images": [
+        "incategory:Lithobates_sylvaticus"
+      ]
+    },
+    {
+      "text": "In spring it thaws, its heart starts again, and it hops away like nothing happened.",
+      "images": [
+        "incategory:Lithobates_sylvaticus spring",
+        "incategory:Lithobates_sylvaticus"
+      ]
+    },
+    {
+      "text": "Follow for one odd lifeform every day.",
+      "images": [
+        "incategory:Lithobates_sylvaticus"
+      ]
+    }
+  ]
+}

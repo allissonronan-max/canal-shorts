@@ -1,0 +1,56 @@
+{
+  "slug": "axolotl",
+  "title": "This Animal Regrows Its Own Brain 🦎 #shorts",
+  "description": "The axolotl can regrow limbs, its spinal cord and even parts of its brain, and it keeps its baby features for life.",
+  "hashtags": [
+    "#shorts",
+    "#axolotl",
+    "#animals",
+    "#facts",
+    "#science"
+  ],
+  "voice": "en-US-AndrewNeural",
+  "rate": "+8%",
+  "scenes": [
+    {
+      "text": "This animal can regrow its legs, its spinal cord, and even parts of its brain.",
+      "images": [
+        "incategory:Ambystoma_mexicanum"
+      ]
+    },
+    {
+      "text": "It's the axolotl, a salamander that never really grows up. It keeps its baby features, like these feathery gills, for its whole life.",
+      "images": [
+        "incategory:Ambystoma_mexicanum gills",
+        "incategory:Ambystoma_mexicanum"
+      ]
+    },
+    {
+      "text": "If it loses a leg, a new one grows back in a matter of weeks. Bones, muscles, nerves. And no scar.",
+      "images": [
+        "incategory:Ambystoma_mexicanum leucistic",
+        "incategory:Ambystoma_mexicanum"
+      ]
+    },
+    {
+      "text": "Scientists study it to understand how humans might one day heal the same way.",
+      "images": [
+        "incategory:Ambystoma_mexicanum aquarium",
+        "incategory:Ambystoma_mexicanum"
+      ]
+    },
+    {
+      "text": "But in the wild, it's almost gone. It survives only in a few canals around Mexico City.",
+      "images": [
+        "Xochimilco canals",
+        "incategory:Ambystoma_mexicanum"
+      ]
+    },
+    {
+      "text": "Follow for more creatures that break the rules.",
+      "images": [
+        "incategory:Ambystoma_mexicanum"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "platypus",
+  "title": "The Mammal Scientists Thought Was Fake 🦆 #shorts",
+  "description": "The platypus lays eggs, males carry venom, it hunts with electroreception and it has no stomach.",
+  "hashtags": [
+    "#shorts",
+    "#platypus",
+    "#animals",
+    "#australia",
+    "#facts"
+  ],
+  "voice": "en-US-AndrewNeural",
+  "rate": "+8%",
+  "scenes": [
+    {
+      "text": "This mammal lays eggs, has venom, and glows under ultraviolet light.",
+      "images": [
+        "incategory:Ornithorhynchus_anatinus"
+      ]
+    },
+    {
+      "text": "It's the platypus. When the first specimen reached Britain, scientists suspected it was a fake, stitched together from different animals.",
+      "images": [
+        "platypus specimen",
+        "incategory:Ornithorhynchus_anatinus"
+      ]
+    },
+    {
+      "text": "Males have a venomous spur on their back legs. A sting can cause severe pain in humans for weeks.",
+      "images": [
+        "platypus spur",
+        "incategory:Ornithorhynchus_anatinus"
+      ]
+    },
+    {
+      "text": "Underwater it hunts with its eyes, ears and nose shut, sensing the electric fields of its prey through its bill.",
+      "images": [
+        "platypus swimming",
+        "incategory:Ornithorhynchus_anatinus"
+      ]
+    },
+    {
+      "text": "And it doesn't even have a stomach.",
+      "images": [
+        "incategory:Ornithorhynchus_anatinus"
+      ]
+    },
+    {
+      "text": "Follow for one odd lifeform every day.",
+      "images": [
+        "incategory:Ornithorhynchus_anatinus"
+      ]
+    }
+  ]
+}

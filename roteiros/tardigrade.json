@@ -1,0 +1,56 @@
+{
+  "slug": "tardigrade",
+  "title": "This Animal Survived Outer Space 🐻 #shorts",
+  "description": "Tardigrades, or water bears, can survive freezing, radiation and even the vacuum of space by shutting down into a 'tun' state.",
+  "hashtags": [
+    "#shorts",
+    "#tardigrade",
+    "#waterbear",
+    "#science",
+    "#facts"
+  ],
+  "voice": "en-US-AndrewNeural",
+  "rate": "+8%",
+  "scenes": [
+    {
+      "text": "This tiny animal survived the vacuum of outer space.",
+      "images": [
+        "incategory:Tardigrada"
+      ]
+    },
+    {
+      "text": "It's a tardigrade, also called a water bear, usually less than half a millimeter long.",
+      "images": [
+        "incategory:Tardigrada SEM",
+        "incategory:Tardigrada"
+      ]
+    },
+    {
+      "text": "When its world dries up, it pulls in its legs, loses almost all its water, and shuts down into a state called a tun.",
+      "images": [
+        "tardigrade tun",
+        "incategory:Tardigrada"
+      ]
+    },
+    {
+      "text": "Like that, it can survive cold close to absolute zero, and radiation that would kill a human many times over.",
+      "images": [
+        "incategory:Tardigrada microscope",
+        "incategory:Tardigrada"
+      ]
+    },
+    {
+      "text": "In 2007, scientists sent tardigrades into orbit, open to space. Some came back alive, and later had babies.",
+      "images": [
+        "Foton-M",
+        "incategory:Tardigrada"
+      ]
+    },
+    {
+      "text": "Follow for more animals that refuse to die.",
+      "images": [
+        "incategory:Tardigrada"
+      ]
+    }
+  ]
+}

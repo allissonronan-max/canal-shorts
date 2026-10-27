@@ -84,6 +84,7 @@ def buscar_imagem(consultas, usadas, destino):
             "prop": "imageinfo", "iiprop": "url|extmetadata|mime|size", "iiurlwidth": 1600,
         }
         url = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params)
+        time.sleep(1)  # respeita o limite de ritmo da Wikimedia
         paginas = json.loads(http_get(url)).get("query", {}).get("pages", {})
         for p in sorted(paginas.values(), key=lambda p: p["index"]):
             info = p["imageinfo"][0]
