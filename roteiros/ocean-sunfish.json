@@ -1,0 +1,34 @@
+{
+  "slug": "ocean-sunfish",
+  "title": "This Fish Lays 300 Million Eggs 🐟 #shorts",
+  "description": "The ocean sunfish (Mola mola) is one of the strangest animals in the sea: no real tail, a diet of jellyfish, and more eggs than any other known vertebrate.",
+  "hashtags": ["#shorts", "#animals", "#ocean", "#facts", "#sunfish"],
+  "voice": "en-US-AndrewNeural",
+  "rate": "+5%",
+  "scenes": [
+    {
+      "text": "This fish can carry three hundred million eggs at once. And almost none of them survive.",
+      "images": ["incategory:Mola_mola"]
+    },
+    {
+      "text": "Meet the ocean sunfish, one of the heaviest bony fish on Earth. Some weigh more than two tons.",
+      "images": ["incategory:Mola_mola aquarium", "incategory:Mola_mola"]
+    },
+    {
+      "text": "It doesn't even have a real tail. Its body just ends in a stiff rudder called a clavus.",
+      "images": ["incategory:Mola_mola skeleton", "incategory:Mola_mola"]
+    },
+    {
+      "text": "It lives mostly on jellyfish, food so watery that it has to eat huge amounts every day.",
+      "images": ["jellyfish ocean", "jellyfish"]
+    },
+    {
+      "text": "And when it lies flat at the surface, it's warming up after deep, cold dives, while seabirds pick off its parasites.",
+      "images": ["incategory:Mola_mola surface", "incategory:Mola_mola"]
+    },
+    {
+      "text": "Follow for more animals that shouldn't exist.",
+      "images": ["incategory:Mola_mola diver", "incategory:Mola_mola"]
+    }
+  ]
+}
