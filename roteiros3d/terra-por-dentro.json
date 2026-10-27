@@ -1,0 +1,18 @@
+{
+  "slug": "terra-por-dentro",
+  "title": "What's Actually Inside the Earth? 🌍 #shorts",
+  "description": "We cut the Earth open like an apple: the thin crust, the slowly flowing mantle, a liquid metal outer core and a solid inner core about as hot as the surface of the Sun.",
+  "hashtags": ["#shorts", "#earth", "#science", "#space", "#3d"],
+  "scene_script": "terra_por_dentro.py",
+  "voice": "am_michael",
+  "speed": 1.05,
+  "scenes": [
+    {"text": "What if you could cut the Earth in half, like an apple?", "label": ""},
+    {"text": "On the outside is the crust, the thin shell we live on. It's only five to seventy kilometers thick.", "label": "CRUST · 5–70 km"},
+    {"text": "Below it is the mantle. Almost three thousand kilometers of hot rock that slowly flows.", "label": "MANTLE · ~2,900 km"},
+    {"text": "Then the outer core, an ocean of liquid iron and nickel. Its motion creates the magnetic field that protects us.", "label": "OUTER CORE · liquid metal"},
+    {"text": "And at the very center, a solid ball of iron, about as hot as the surface of the Sun.", "label": "INNER CORE · ~5,200 °C"},
+    {"text": "The deepest hole humans have ever dug? Just twelve kilometers. We've barely scratched the surface.", "label": "DEEPEST HOLE · 12 km"},
+    {"text": "Follow for more of the world, cut open.", "label": ""}
+  ]
+}
